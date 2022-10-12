@@ -1,7 +1,7 @@
 def solution(i):
     listOfPrimes = []
     primeDigitAmount = 0
-    for number in range(2, 100):
+    for number in range(2, 100000):
         numberStatus = True
         if primeDigitAmount >= (i+5):
             stringOfPrimes = ''.join(str(e) for e in listOfPrimes)
