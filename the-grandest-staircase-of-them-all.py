@@ -29,16 +29,11 @@
 
 # Write a function called solution(n) that takes a positive integer n and returns the number of different staircases that can be built from exactly n bricks. n will always be at least 3 (so you can have a staircase at all), but no more than 200, because Commander Lambda's not made of money!
 
-from msilib.schema import tables
-
-
 def solution(n):
     reg = [1]*2 + [0]*(n-1) # The minimum of N is 3, so we can skip the first 1 interation
     for row in range(2, n+1):
         for column in range(n, row-1, -1):
             reg[column] += reg[column-row]
     return reg[-1] -1
-
-
 
 print(solution(200))
